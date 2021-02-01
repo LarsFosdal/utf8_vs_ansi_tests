@@ -2,15 +2,15 @@
 
 uses
   Vcl.Forms,
-  frmThisUnitIsAnsi in 'frmThisUnitIsAnsi.pas' {Form1},
-  frmThisUnitIsUTF8 in 'frmThisUnitIsUTF8.pas' {Form2};
+  frmThisUnitIsAnsi in 'frmThisUnitIsAnsi.pas' {FormAnsi},
+  frmThisUnitIsUTF8 in 'frmThisUnitIsUTF8.pas' {FormUTF8};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TFormAnsi, FormAnsi);
+  Application.CreateForm(TFormUTF8, FormUTF8);
   Application.Run;
 end.

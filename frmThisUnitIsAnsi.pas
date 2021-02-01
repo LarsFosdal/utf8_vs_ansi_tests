@@ -4,11 +4,13 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, frmThisUnitIsUTF8;
 
 type
-  TForm1 = class(TForm)
+  TFormAnsi = class(TForm)
     Label1: TLabel;
+    Label2: TLabel;
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -16,13 +18,19 @@ type
   end;
 
 const
-  ansitxt = 'Dette er norske smו זרו og store ֶ״ֵ';
+  ansitxt = 'ANSI Dette er norske smו זרו og store ֶ״ֵ';
 
 var
-  Form1: TForm1;
+  FormAnsi: TFormAnsi;
 
 implementation
 
 {$R *.dfm}
+
+procedure TFormAnsi.FormShow(Sender: TObject);
+begin
+  Label2.Caption := ansitxt;
+  FormUTF8.Show;
+end;
 
 end.
